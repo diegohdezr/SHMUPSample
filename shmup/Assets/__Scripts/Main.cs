@@ -57,4 +57,16 @@ public class Main : MonoBehaviour
         //invoke SpawnEnemy again
         Invoke("SpawnEnemy",1f/enemySpawnPerSecond);
     }
+
+    public void DelayedRestart(float delay)
+    {
+        //invoke the Restart Method in delay of seconds
+        Invoke("Restart", delay);
+    }
+
+    public void Restart() 
+    {
+        //Reload Scene_0 to restart the game
+        SceneManager.LoadScene("_Scene_0");
+    }
 }

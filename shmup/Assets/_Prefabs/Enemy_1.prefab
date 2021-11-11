@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6475477562271163876}
   - component: {fileID: 8900634917299465645}
+  - component: {fileID: 5394609886230397631}
   m_Layer: 10
   m_Name: Enemy_1
   m_TagString: Untagged
@@ -144,6 +145,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &5394609886230397631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475477562271163879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5055ceb64443d44bde78612e041f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  fireRate: 0.3
+  health: 10
+  score: 100
+  waveFrequency: 2
+  waveWidth: 8.29
+  waveRotY: 45
 --- !u!1 &6475477562431715271
 GameObject:
   m_ObjectHideFlags: 0

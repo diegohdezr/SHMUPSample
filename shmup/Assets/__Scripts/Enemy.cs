@@ -10,9 +10,9 @@ public class Enemy : MonoBehaviour
     public float health = 10;
     public int score = 100;//points earned for destroying this
 
-    private BoundsCheck bndCheck;
+    protected BoundsCheck bndCheck;
 
-    private void Awake()
+    public void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
     }
@@ -25,13 +25,27 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         Move();
         if (bndCheck != null && bndCheck.offDown) 
         {
             //we are off the bottom, so we destroy this GO
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject otherObject = collision.gameObject;
+
+        if (otherObject.tag == "ProjectileHero")
+        {
+            Destroy(otherObject);
+            Destroy(gameObject);
+        }
+        else {
+            Debug.Log("enemy hit by non-ProjectileHero: " + otherObject.name);
         }
     }
 
